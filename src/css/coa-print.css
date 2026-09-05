@@ -1,0 +1,62 @@
+/* ============================================================
+   성적서 인쇄 CSS — F3 design §5.1
+   결정: window.print() + @media print (서버 PDF 아님, §5)
+
+   서버 PDF 는 한글 폰트 임베딩에서 시간이 크게 든다.
+   Sprint-1 목표는 "1장이 제대로 나오는 것"이다.
+   ============================================================ */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+
+  /* 화면 전용 요소 제거 — 이게 없으면 버튼·메뉴가 종이에 찍힌다 */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Quasar 는 헤더 높이만큼 본문에 padding-top 을, 좌측 서랍 폭만큼
+     padding-left 를 인라인으로 넣는다. 감춰도 여백이 남아 첫 장 위·왼쪽이
+     비므로 둘 다 걷어낸다. */
+  .q-page-container {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  body,
+  .q-layout,
+  .q-page {
+    background: #fff !important;
+    color: #000 !important;
+    min-height: 0 !important;
+  }
+
+  /* 표 헤더를 매 페이지 반복 (FR-11).
+     **이 한 줄이 FR-11 의 실제 구현이다.** 없으면 2페이지째에 열 제목이 사라진다. */
+  thead {
+    display: table-header-group;
+  }
+
+  /* 행이 페이지 경계에서 잘리지 않게 */
+  tr {
+    break-inside: avoid;
+  }
+
+  /* 배경색 인쇄 — 기본값은 배경을 안 찍는다 */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 성적서는 종이에서 항상 흑백 라인 문서다.
+     화면이 다크모드여도 인쇄물은 흰 바탕이어야 한다. */
+  .coa-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+}

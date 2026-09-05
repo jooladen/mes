@@ -1,0 +1,8 @@
+[
+  { "userId": "user01", "userNm": "홍길동", "deptCd": "1200", "deptNm": "검사팀",     "useYn": "Y" },
+  { "userId": "user02", "userNm": "김철수", "deptCd": "1200", "deptNm": "검사팀",     "useYn": "Y" },
+  { "userId": "user03", "userNm": "이영희", "deptCd": "1100", "deptNm": "품질관리팀", "useYn": "Y" },
+  { "userId": "user04", "userNm": "박민수", "deptCd": "1100", "deptNm": "품질관리팀", "useYn": "Y" },
+  { "userId": "user05", "userNm": "정수진", "deptCd": "2000", "deptNm": "생산부",     "useYn": "Y" },
+  { "userId": "user09", "userNm": "퇴사자",  "deptCd": "1200", "deptNm": "검사팀",     "useYn": "N" }
+]

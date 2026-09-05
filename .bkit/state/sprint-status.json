@@ -1,0 +1,15 @@
+{
+  "version": "1.1",
+  "entries": {
+    "mes-coa-s1": {
+      "id": "mes-coa-s1",
+      "name": "Sprint-1 품질/CoA",
+      "phase": "do",
+      "status": "active",
+      "trustLevelAtStart": "L2",
+      "createdAt": "2026-09-04T13:29:09.015Z",
+      "updatedAt": "2026-09-04T16:54:06.690Z"
+    }
+  },
+  "updatedAt": "2026-09-04T16:54:06.690Z"
+}

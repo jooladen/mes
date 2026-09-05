@@ -1,0 +1,72 @@
+{
+  "fileEditCounts": {
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\역추적-실전노트.md": {
+      "count": 1,
+      "ts": 1788630720101
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\파일쪼개기-로드맵.md": {
+      "count": 1,
+      "ts": 1788631658502
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\Step0AllInOne.vue": {
+      "count": 1,
+      "ts": 1788631699839
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\App.vue": {
+      "count": 7,
+      "ts": 1788638677771
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step1\\orderSeed.js": {
+      "count": 1,
+      "ts": 1788632439368
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step1\\Step1DataSplit.vue": {
+      "count": 1,
+      "ts": 1788632467354
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\화면-로직-분리-QnA.md": {
+      "count": 1,
+      "ts": 1788633711410
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\왜-모르게-하나.md": {
+      "count": 1,
+      "ts": 1788634682211
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\21-같이-바뀌는것끼리-모은다.md": {
+      "count": 1,
+      "ts": 1788637060780
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\학습\\00-어디부터-볼까.md": {
+      "count": 1,
+      "ts": 1788637190859
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\HANDOFF.md": {
+      "count": 1,
+      "ts": 1788637255511
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step2\\ordersApi.js": {
+      "count": 1,
+      "ts": 1788637402320
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step2\\ordersApi.test.js": {
+      "count": 1,
+      "ts": 1788637420330
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step2\\Step2LogicSplit.vue": {
+      "count": 1,
+      "ts": 1788637443811
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\학습\\23-파일쪼개기-실습-5단계.md": {
+      "count": 2,
+      "ts": 1788637570487
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\layouts\\MainLayout.vue": {
+      "count": 1,
+      "ts": 1788638655306
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\css\\coa-print.css": {
+      "count": 1,
+      "ts": 1788638704392
+    }
+  }
+}

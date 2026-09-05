@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0",
+  "projectId": "mes-coa",
+  "projectName": "MES 출하성적서(CoA) 풀스택",
+  "features": [
+    "F0-common-core",
+    "F1-quality-spec",
+    "F2-inspection-result",
+    "F3-coa-print",
+    "F4-quality-pivot"
+  ],
+  "sprints": [
+    {
+      "sprintId": "mes-coa-s1",
+      "name": "Sprint-1 — Phase 1 품질/CoA",
+      "features": [
+        "F0-common-core",
+        "F1-quality-spec",
+        "F2-inspection-result",
+        "F3-coa-print",
+        "F4-quality-pivot"
+      ],
+      "order": 1,
+      "status": "planned"
+    },
+    {
+      "sprintId": "mes-shopfloor-s2",
+      "name": "Sprint-2 — Phase 2 현장 실행",
+      "features": [
+        "F5-work-order",
+        "F6-bom-kitting",
+        "F7-lot-tracking",
+        "F8-oee"
+      ],
+      "order": 2,
+      "status": "deferred"
+    }
+  ],
+  "dependencyGraph": {
+    "F0-common-core": [],
+    "F1-quality-spec": ["F0-common-core"],
+    "F2-inspection-result": ["F1-quality-spec"],
+    "F3-coa-print": ["F2-inspection-result"],
+    "F4-quality-pivot": ["F2-inspection-result"],
+    "F5-work-order": ["F0-common-core", "F2-inspection-result"],
+    "F6-bom-kitting": ["F5-work-order"],
+    "F7-lot-tracking": ["F5-work-order"],
+    "F8-oee": ["F5-work-order"]
+  },
+  "trustLevel": "L3",
+  "context": {
+    "WHY": "준의 실무 배정이 출하성적서(CoA)다. CoA는 MES의 terminal output이라 Spec→검사실적→Lot→작업지시 역참조 체인이 전부 필요하고, 따라서 실무 완수와 MES 전체 학습이 같은 작업이 된다. 완성 소스는 관리자 제안 자료이자 Vue3/Quasar/RealGrid2/MyBatis 핵심 문법 학습 교재가 된다.",
+    "WHO": "1차 품질 담당자(검사값 입력·성적서 발행), 2차 공장 관리자(제안 수신자), 3차 준 본인(학습자)",
+    "RISK": "R1 CoA 양식 미확정 시 역산 불가 / R2 데이터 모델 부재로 Mock 작성 불가 / R3 RealGrid2 라이선스 미확보 / R4 No-DTO CamelMap의 타입 검증 부재 / R5 Phase2 욕심으로 Sprint-1 미완주",
+    "SUCCESS": "Mock 프로파일만으로 브라우저에서 Lot 선택 → CoA 미리보기 → PDF 출력까지 중단 없이 관통된다.",
+    "SCOPE": "Sprint-1: 5 features / API 5개 / 화면 4개 + 공통 컴포넌트 3종 / DB 테이블 8개. Phase 2(F5~F8)는 Sprint-2로 이월하되 데이터 모델(TRN_WORK_ORDER, TRN_LOT)은 Sprint-1에서 선반영."
+  },
+  "generatedAt": "2026-09-04T13:19:30.834Z",
+  "updatedAt": "2026-09-04T13:19:30.834Z",
+  "masterPlanPath": "docs/01-plan/features/mes-coa.master-plan.md"
+}

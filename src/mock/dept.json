@@ -1,0 +1,10 @@
+[
+  { "deptCd": "0000", "deptNm": "개발부",   "parentDeptCd": null,   "sortNo": 1, "useYn": "Y" },
+  { "deptCd": "0100", "deptNm": "개발1팀", "parentDeptCd": "0000", "sortNo": 2, "useYn": "Y" },
+  { "deptCd": "0200", "deptNm": "개발2팀", "parentDeptCd": "0000", "sortNo": 3, "useYn": "Y" },
+  { "deptCd": "1000", "deptNm": "품질보증부", "parentDeptCd": null,   "sortNo": 4, "useYn": "Y" },
+  { "deptCd": "1100", "deptNm": "품질관리팀", "parentDeptCd": "1000", "sortNo": 5, "useYn": "Y" },
+  { "deptCd": "1200", "deptNm": "검사팀",    "parentDeptCd": "1000", "sortNo": 6, "useYn": "Y" },
+  { "deptCd": "2000", "deptNm": "생산부",    "parentDeptCd": null,   "sortNo": 7, "useYn": "Y" },
+  { "deptCd": "9000", "deptNm": "구매부(폐지)", "parentDeptCd": null, "sortNo": 9, "useYn": "N" }
+]

@@ -1,0 +1,12 @@
+[
+  { "procCd": "P100", "procNm": "가공",   "parentProcCd": null,   "sortNo": 1, "useYn": "Y" },
+  { "procCd": "P110", "procNm": "절삭",   "parentProcCd": "P100", "sortNo": 2, "useYn": "Y" },
+  { "procCd": "P120", "procNm": "연마",   "parentProcCd": "P100", "sortNo": 3, "useYn": "Y" },
+  { "procCd": "P130", "procNm": "드릴링", "parentProcCd": "P100", "sortNo": 4, "useYn": "Y" },
+  { "procCd": "P200", "procNm": "열처리", "parentProcCd": null,   "sortNo": 5, "useYn": "Y" },
+  { "procCd": "P210", "procNm": "담금질", "parentProcCd": "P200", "sortNo": 6, "useYn": "Y" },
+  { "procCd": "P220", "procNm": "뜨임",   "parentProcCd": "P200", "sortNo": 7, "useYn": "Y" },
+  { "procCd": "P300", "procNm": "표면처리", "parentProcCd": null, "sortNo": 8, "useYn": "Y" },
+  { "procCd": "P310", "procNm": "도금",   "parentProcCd": "P300", "sortNo": 9, "useYn": "Y" },
+  { "procCd": "P900", "procNm": "수작업(폐지)", "parentProcCd": null, "sortNo": 99, "useYn": "N" }
+]

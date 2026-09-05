@@ -1,0 +1,72 @@
+[
+  {
+    "lotNo": "LOT-20260904-001",
+    "itemCd": "ITEM-001",
+    "procCd": "P110",
+    "goodQty": 100,
+    "scrapQty": 0,
+    "lotStatus": "WAIT",
+    "totalJudge": "NONE",
+    "judgeDt": null
+  },
+  {
+    "lotNo": "LOT-20260904-002",
+    "itemCd": "ITEM-001",
+    "procCd": "P110",
+    "goodQty": 80,
+    "scrapQty": 2,
+    "lotStatus": "INSP",
+    "totalJudge": "NONE",
+    "judgeDt": null
+  },
+  {
+    "lotNo": "LOT-20260904-003",
+    "itemCd": "ITEM-001",
+    "procCd": "P120",
+    "goodQty": 120,
+    "scrapQty": 0,
+    "lotStatus": "OK",
+    "totalJudge": "PASS",
+    "judgeDt": "2026-09-04T10:30:00"
+  },
+  {
+    "lotNo": "LOT-20260904-004",
+    "itemCd": "ITEM-002",
+    "procCd": "P110",
+    "goodQty": 50,
+    "scrapQty": 5,
+    "lotStatus": "LOCKED",
+    "totalJudge": "FAIL",
+    "judgeDt": "2026-09-04T11:20:00"
+  },
+  {
+    "lotNo": "LOT-20260904-005",
+    "itemCd": "ITEM-002",
+    "procCd": "P210",
+    "goodQty": 200,
+    "scrapQty": 0,
+    "lotStatus": "WAIT",
+    "totalJudge": "NONE",
+    "judgeDt": null
+  },
+  {
+    "lotNo": "LOT-20260904-006",
+    "itemCd": "ITEM-003",
+    "procCd": null,
+    "goodQty": 30,
+    "scrapQty": 0,
+    "lotStatus": "OK",
+    "totalJudge": "PASS",
+    "judgeDt": "2026-09-04T14:05:00"
+  },
+  {
+    "lotNo": "LOT-20260904-007",
+    "itemCd": "ITEM-004",
+    "procCd": "P120",
+    "goodQty": 250,
+    "scrapQty": 3,
+    "lotStatus": "OK",
+    "totalJudge": "PASS",
+    "judgeDt": "2026-09-04T15:40:00"
+  }
+]

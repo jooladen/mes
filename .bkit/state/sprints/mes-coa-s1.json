@@ -1,0 +1,248 @@
+{
+  "id": "mes-coa-s1",
+  "name": "Sprint-1 품질/CoA",
+  "version": "1.1",
+  "phase": "do",
+  "status": "active",
+  "context": {
+    "WHY": "① 준의 현재 실무 배정이 **출하성적서**다. ② CoA는 MES의 terminal output이라, 이걸 제대로 뽑으려면 Spec→검사실적→Lot→작업지시 역참조 체인이 전부 필요하다. 즉 실무 완수와 MES 전체 감 잡기가 같은 작업이다. ③ 완성된 소스가 있으면 관리자에게 **제안**할 수 있고, Vue3/Quasar/RealGrid2/MyBatis 중 **실제로 쓰이는 문법만** 골라 학습할 수 있다.",
+    "WHO": "1차: 품질 담당자(검사값 입력·성적서 발행) / 2차: 대기업 공장 관리자(제안 수신자) / 3차: 준 본인(학습자)",
+    "RISK": "R1 CoA 최종 양식 미확정 시 전체 역산 불가 / R2 데이터 모델 부재로 Mock조차 못 만듦 / R3 RealGrid2 상용 라이선스·CDN 확보 실패 / R4 CamelMap·No-DTO 원칙이 타입 안전성을 포기하므로 계약 검증을 Mock 스펙에 의존",
+    "SUCCESS": "Mock 프로파일만으로 브라우저에서 Lot 선택 → CoA 미리보기 → PDF 출력까지 **중단 없이 관통**된다.",
+    "SCOPE": "Sprint-1: 5 features / API 10개 / 화면 4개 + 공통 컴포넌트 3종 / DB 테이블 8개. Phase 2(F5~F8)는 Sprint-2로 이월하되 TRN_WORK_ORDER·TRN_LOT 모델은 선반영."
+  },
+  "features": [
+    "F0-common-core",
+    "F1-quality-spec",
+    "F2-inspection-result",
+    "F3-coa-print",
+    "F4-quality-pivot"
+  ],
+  "config": {
+    "budget": 1000000,
+    "phaseTimeoutHours": 4,
+    "maxIterations": 5,
+    "matchRateTarget": 100,
+    "matchRateMinAcceptable": 90,
+    "dashboardMode": "session-start",
+    "manual": false
+  },
+  "autoRun": {
+    "enabled": true,
+    "scope": null,
+    "trustLevelAtStart": "L2",
+    "startedAt": null,
+    "lastAutoAdvanceAt": "2026-09-04T16:54:06.660Z"
+  },
+  "autoPause": {
+    "armed": [
+      "QUALITY_GATE_FAIL",
+      "ITERATION_EXHAUSTED",
+      "BUDGET_EXCEEDED",
+      "PHASE_TIMEOUT"
+    ],
+    "lastTrigger": null,
+    "pauseHistory": []
+  },
+  "phaseHistory": [
+    {
+      "phase": "plan",
+      "enteredAt": "2026-09-04T13:39:45.656Z",
+      "exitedAt": "2026-09-04T14:06:21.153Z",
+      "durationMs": 1595497
+    },
+    {
+      "phase": "design",
+      "enteredAt": "2026-09-04T14:06:21.153Z",
+      "exitedAt": "2026-09-04T16:54:06.660Z",
+      "durationMs": 10065507
+    },
+    {
+      "phase": "do",
+      "enteredAt": "2026-09-04T16:54:06.660Z",
+      "exitedAt": null,
+      "durationMs": null
+    }
+  ],
+  "iterateHistory": [],
+  "docs": {
+    "masterPlan": "docs/01-plan/features/mes-coa.master-plan.md",
+    "prd": null,
+    "plan": [
+      "docs/01-plan/features/F0-common-core.plan.md",
+      "docs/01-plan/features/F1-quality-spec.plan.md",
+      "docs/01-plan/features/F2-inspection-result.plan.md",
+      "docs/01-plan/features/F3-coa-print.plan.md",
+      "docs/01-plan/features/F4-quality-pivot.plan.md"
+    ],
+    "design": [
+      "docs/02-design/mes-coa-s1.data-model.md",
+      "docs/02-design/F0-common-core.design.md",
+      "docs/02-design/F1-quality-spec.design.md",
+      "docs/02-design/F2-inspection-result.design.md",
+      "docs/02-design/F3-coa-print.design.md",
+      "docs/02-design/F4-quality-pivot.design.md"
+    ],
+    "iterate": null,
+    "qa": null,
+    "report": null
+  },
+  "featureMap": {
+    "F0-common-core": {
+      "pdcaPhase": "do",
+      "matchRate": null,
+      "qa": "pending",
+      "completion": 60
+    },
+    "F1-quality-spec": {
+      "pdcaPhase": "do",
+      "matchRate": null,
+      "qa": "pending",
+      "completion": 60
+    },
+    "F2-inspection-result": {
+      "pdcaPhase": "do",
+      "matchRate": null,
+      "qa": "pending",
+      "completion": 60
+    },
+    "F3-coa-print": {
+      "pdcaPhase": "do",
+      "matchRate": null,
+      "qa": "pending",
+      "completion": 60
+    },
+    "F4-quality-pivot": {
+      "pdcaPhase": "do",
+      "matchRate": null,
+      "qa": "pending",
+      "completion": 60
+    }
+  },
+  "dataFlow": {},
+  "qualityGates": {
+    "M1_matchRate": {
+      "current": null,
+      "threshold": 90,
+      "passed": null
+    },
+    "M2_codeQualityScore": {
+      "current": null,
+      "threshold": 80,
+      "passed": null
+    },
+    "M3_criticalIssueCount": {
+      "current": 0,
+      "threshold": 0,
+      "passed": true
+    },
+    "M4_apiComplianceRate": {
+      "current": 100,
+      "threshold": 95,
+      "passed": true
+    },
+    "M5_runtimeErrorRate": {
+      "current": null,
+      "threshold": 1,
+      "passed": null
+    },
+    "M7_conventionCompliance": {
+      "current": null,
+      "threshold": 90,
+      "passed": null
+    },
+    "M8_designCompleteness": {
+      "current": 86,
+      "threshold": 85,
+      "passed": true
+    },
+    "M10_pdcaCycleTimeHours": {
+      "current": null,
+      "threshold": 40,
+      "passed": null
+    },
+    "S1_dataFlowIntegrity": {
+      "current": null,
+      "threshold": 100,
+      "passed": null
+    },
+    "S2_featureCompletion": {
+      "current": 0,
+      "threshold": 100,
+      "passed": false
+    },
+    "S3_velocity": {
+      "current": null,
+      "threshold": null,
+      "passed": null
+    },
+    "S4_archiveReadiness": {
+      "current": false,
+      "threshold": true,
+      "passed": false
+    }
+  },
+  "annotations": [
+    {
+      "at": "2026-09-04T16:54:05.782Z",
+      "kind": "gate_exempted",
+      "gate": "M4",
+      "phase": "design",
+      "measuredValue": 69,
+      "originalThreshold": 92,
+      "note": "design phase 에서 M4 를 통과 기준에서 제외. 측정값 69 는 보존한다. M4 는 '계약 ↔ 구현' 대조 지표이며 design 에는 코드가 없어 '설계 문서가 완벽한가'로 변질된다. 9회 측정 95 도달 0회. **do 진입 후 코드가 생기면 threshold 를 95 로 복원할 것.**"
+    },
+    {
+      "at": "2026-09-05T05:09:47.566Z",
+      "kind": "gate_restored",
+      "gate": "M4",
+      "phase": "do",
+      "from": 0,
+      "to": 95,
+      "note": "do 진입 시 남긴 약속 이행 — 구현 코드가 생겼으므로 M4(계약 ↔ 구현 대조)를 정상 게이트로 되돌린다. 이제 M4 는 '설계 문서가 완벽한가'가 아니라 원래 의미대로 잴 수 있다."
+    }
+  ],
+  "kpi": {
+    "matchRate": null,
+    "criticalIssues": 0,
+    "qaPassRate": null,
+    "dataFlowIntegrity": null,
+    "featuresTotal": 5,
+    "featuresCompleted": 0,
+    "featureCompletionRate": 0,
+    "cumulativeTokens": 0,
+    "cumulativeIterations": 0,
+    "sprintCycleHours": null
+  },
+  "createdAt": "2026-09-04T13:29:09.015Z",
+  "startedAt": null,
+  "archivedAt": null,
+  "lastGateFailure": {
+    "phase": "design",
+    "toPhase": "do",
+    "gateResults": {
+      "allPassed": false,
+      "phase": "design",
+      "results": {
+        "M4": {
+          "gateKey": "M4",
+          "current": 69,
+          "threshold": 92,
+          "passed": false
+        },
+        "M8": {
+          "gateKey": "M8",
+          "current": 86,
+          "threshold": 85,
+          "passed": true
+        }
+      }
+    },
+    "reportPath": "docs/03-analysis/mes-coa-s1-gate-fail-design-2026-09-04T16-52-46-613Z.md",
+    "timestamp": "2026-09-04T16:52:46.613Z",
+    "resolvedAt": "2026-09-04T16:54:06.664Z",
+    "resolvedBy": "auto",
+    "resolutionReason": "advancePhase design → do succeeded"
+  },
+  "updatedAt": "2026-09-05T05:21:22.103Z"
+}

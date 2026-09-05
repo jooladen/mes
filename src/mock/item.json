@@ -1,0 +1,7 @@
+[
+  { "itemCd": "ITEM-001", "itemNm": "스틸 브라켓",     "itemSpec": "SUS304 t2.0", "itemUnitCd": "EA", "useYn": "Y" },
+  { "itemCd": "ITEM-002", "itemNm": "알루미늄 하우징", "itemSpec": "AL6061 t3.0", "itemUnitCd": "EA", "useYn": "Y" },
+  { "itemCd": "ITEM-003", "itemNm": "구리 부싱",       "itemSpec": "C3604 φ12",   "itemUnitCd": "KG", "useYn": "Y" },
+  { "itemCd": "ITEM-004", "itemNm": "정밀 샤프트",     "itemSpec": "SCM440 φ25",  "itemUnitCd": "EA", "useYn": "Y" },
+  { "itemCd": "ITEM-009", "itemNm": "단종 부품",       "itemSpec": "-",           "itemUnitCd": "EA", "useYn": "N" }
+]

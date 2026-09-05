@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "enabled": true,
+  "teamName": "",
+  "feature": "",
+  "pdcaPhase": "plan",
+  "orchestrationPattern": "leader",
+  "ctoAgent": "fable",
+  "startedAt": "2026-09-05T05:10:13.110Z",
+  "lastUpdated": "2026-09-05T19:58:46.293Z",
+  "teammates": [
+    {
+      "id": "ae824e225c0db1e79",
+      "name": "bkit:gap-detector",
+      "role": "bkit:gap-detector",
+      "model": "opus",
+      "status": "completed",
+      "currentTask": null,
+      "taskId": null,
+      "startedAt": "2026-09-05T05:10:13.131Z",
+      "lastActivityAt": "2026-09-05T05:13:23.178Z"
+    },
+    {
+      "id": "a9b9135f41fc08e91",
+      "name": "bkit:gap-detector",
+      "role": "bkit:gap-detector",
+      "model": "opus",
+      "status": "completed",
+      "currentTask": null,
+      "taskId": null,
+      "startedAt": "2026-09-05T05:16:22.856Z",
+      "lastActivityAt": "2026-09-05T05:18:43.900Z"
+    }
+  ],
+  "progress": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0,
+    "failedTasks": 0,
+    "pendingTasks": 0
+  },
+  "recentMessages": [],
+  "sessionId": "965cafe2-8991-4c8d-b6f9-591ccf2d0f88"
+}

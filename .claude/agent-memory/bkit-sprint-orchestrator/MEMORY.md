@@ -1,0 +1,1 @@
+- [bkit lib location](reference_bkit_lib_location.md) — measure-router.js 등 bkit lib는 프로젝트 루트에 없음, grep 하지 말 것

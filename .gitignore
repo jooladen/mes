@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+
+# 라이선스 키 — 절대 커밋 금지 (Plan §8.3)
+.env
+.env.local
+.env.*.local

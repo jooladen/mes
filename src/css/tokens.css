@@ -1,0 +1,232 @@
+/* ============================================================
+   디자인 토큰 — 라이트/다크 두 벌
+   Plan Ref: §7.3 화면 레이아웃, §8.2 상태 색
+
+   game2048/src/css/tokens.css 에서 2048 타일 토큰을 걷어내고
+   행 상태 색(신규/수정/삭제)을 넣은 버전이다.
+   RealGrid2 테마 보정 블록은 그대로 물려받는다 — 그쪽은 이미 실측으로 다듬어졌다.
+   ============================================================ */
+
+:root {
+  /* 브라우저 네이티브 위젯(체크박스·스크롤바·기본 select)에게 테마를 알려준다.
+     이게 없으면 RealGrid2 의 체크바 <input type="checkbox"> 가
+     다크 배경 위에 흰 사각형으로 튄다. CSS 로는 못 칠하는 영역이다. */
+  color-scheme: light;
+
+  /* --- 기본 표면 (라이트) --- */
+  --ink: #3f3a35;
+  --ink-2: #857c72;
+  --surface: #f7f5f0;
+  --panel: #ffffff;
+  --line: #d8cfc4;
+
+  /* --- 행 상태 색 (Plan §8.2 — 신규 초록 / 수정 노랑 / 삭제 빨강) --- */
+  --state-created: #1e8e5a;
+  --state-updated: #c98a16;
+  --state-deleted: #c2413a;
+  --state-none: #a89c8f;
+
+  /* --- 상태 배지 배경 (연한 톤) --- */
+  --state-created-bg: rgba(30, 142, 90, 0.14);
+  --state-updated-bg: rgba(201, 138, 22, 0.16);
+  --state-deleted-bg: rgba(194, 65, 58, 0.14);
+
+  /* --- PK 잠금 셀 배경 (Design §5.3) --- */
+  --lock-bg: rgba(120, 110, 100, 0.12);
+
+  /* --- 타입 --- */
+  --font-body: 'Pretendard', -apple-system, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  --font-num: 'JetBrains Mono', 'D2Coding', Consolas, monospace;
+
+  /* --- 치수 --- */
+  --header-h: 52px;
+  --radius: 6px;
+}
+
+/* Quasar 의 Dark 플러그인은 <body> 에 body--dark 를 붙인다.
+   그 아래에서 토큰만 갈아끼우면 모든 컴포넌트가 따라온다. */
+body.body--dark {
+  color-scheme: dark;
+
+  --ink: #e8e2da;
+  --ink-2: #9c9187;
+  --surface: #14120f;
+  --panel: #1c1a17;
+  --line: #33302b;
+
+  /* 상태 색은 어두운 배경에서 채도를 조금 올려야 눈에 들어온다. */
+  --state-created: #3fbe84;
+  --state-updated: #e8b23f;
+  --state-deleted: #e26b63;
+  --state-none: #6f665e;
+
+  --state-created-bg: rgba(63, 190, 132, 0.18);
+  --state-updated-bg: rgba(232, 178, 63, 0.18);
+  --state-deleted-bg: rgba(226, 107, 99, 0.18);
+
+  --lock-bg: rgba(200, 190, 180, 0.10);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* 숫자는 폭이 고정된 글꼴이어야 흔들리지 않는다. */
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   RealGrid2 테마 보정
+   출처: game2048/src/css/tokens.css (2026-08-23 실측으로 다듬어진 것)
+
+   RealGrid2 는 Quasar 의 Dark 플러그인을 따르지 않는다.
+   realgrid-style.css 가 색을 하드코딩해 두기 때문이다:
+     .rg-body       { background-color: #FFFFFF }
+     .rg-empty-grid { background: #FFFFFF; color: #000000; font-size: 32px }
+
+   ⚠️ 가장 중요한 규칙 (game2048 S4 에서 3개 모듈 동안 못 잡았던 버그):
+      라이브러리가 *동적으로 바꾸는 속성*에는 !important 를 쓰지 않는다.
+      styleCallback 은 결과를 셀의 인라인 style 로 적용하는데,
+      CSS 우선순위가  !important 외부규칙 > 인라인 > 일반 외부규칙  이라
+      color 에 !important 를 붙이면 styleCallback 이 통째로 죽는다.
+
+      color      → styleCallback 대상 → !important 금지
+      background → 정적            → !important 유지 OK
+   ============================================================ */
+
+/* 그리드 루트. 여기가 흰색이면 헤더 좌상단("No." 칸)처럼
+   자식이 배경을 안 칠하는 자리마다 흰 조각이 비쳐 보인다. */
+.rg-root,
+.rg-grid {
+  background: var(--panel) !important;
+}
+
+/* 셀 편집기 — 이번 프로젝트에서는 실제로 쓴다.
+   color 에 !important 를 붙이지 않는다. 편집기 색도 콜백이 건드릴 여지가 있어
+   위 규칙을 그대로 적용한다. (S0-6 에서 실측 대상) */
+.rg-editor-container,
+.rg-editor {
+  background: var(--panel) !important;
+  color: var(--ink);
+}
+
+/* 셀 편집기 안의 아이콘 버튼 (드롭다운 화살표 등)
+   아이콘이 SVG data URI 로 박혀 있어 CSS 로 내부 색을 바꿀 수 없다.
+   흰 바탕 + 검은 화살표로 그려져 다크모드에서 흰 사각형처럼 튄다.
+   흑백 아이콘이라 통째로 반전시키는 것이 가장 깔끔하다. */
+body.body--dark [class^='rg-button-'],
+body.body--dark [class*=' rg-button-'] {
+  filter: invert(1);
+}
+
+/* 빈 메시지: 기본 32px 는 너무 크다 */
+.rg-empty-grid {
+  background: var(--panel) !important;
+  color: var(--ink-2) !important;
+  font-size: 14px !important;
+  font-family: var(--font-body) !important;
+}
+
+/* 본문 배경 */
+.rg-body,
+.rg-fixed-body {
+  background-color: var(--panel) !important;
+}
+
+/* 셀 글자색과 격자선 — color 에 !important 없음 (위 경고 참조) */
+.rg-body .rg-table tr td,
+.rg-fixed-body .rg-table tr td {
+  color: var(--ink);
+  border-right-color: var(--line) !important;
+  border-bottom-color: var(--line) !important;
+}
+
+/* 헤더 */
+.rg-header,
+.rg-header-cell {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+
+/* 행 번호 표시줄 */
+.rg-rowindicator-cell,
+.rg-rowbarcontainer,
+.rg-fixed-row-bar,
+.rg-fixed-column-bar,
+.rg-head {
+  background: var(--surface) !important;
+  color: var(--ink-2) !important;
+  border-color: var(--line) !important;
+}
+
+/* 상태바 · 체크바 (S2 에서 켜면서 생긴 흰 조각 — S1 에는 없었다)
+   realgrid-style.css 가 #f6f6f8 을 하드코딩해 다크모드에서 흰 띠 두 줄이 남는다.
+
+   ⚠️ 반드시 background-COLOR 로 쓴다.
+      단축 속성 `background` 를 쓰면 background-image 까지 날아가
+      상태바의 신규(+)/수정(✓)/삭제 아이콘이 통째로 사라진다.
+      (이 파일의 다른 규칙들이 `background` 를 쓰는 건 거기엔 아이콘이 없어서다) */
+.rg-statebar-cell,
+.rg-checkbar-cell,
+.rg-statebar-head,
+.rg-checkbar-head,
+.rg-statebar,
+.rg-checkbar {
+  background-color: var(--surface) !important;
+  border-color: var(--line) !important;
+}
+
+/* 짝수 행 / 마우스 오버 */
+.rg-alternate-row {
+  background-color: var(--surface) !important;
+}
+.rg-rowhover {
+  background-color: var(--line) !important;
+}
+
+/* ⚠️ 셀 hover — S1 실측으로 잡은 것.
+   realgrid-style.css 에 이런 규칙이 하드코딩되어 있다:
+     .rg-body .rg-table tr td:hover { background: #ebebeb }
+   다크모드에서는 밝은 회색 배경 위에 밝은 글자(--ink)가 얹혀
+   **마우스를 올린 셀 하나만** 글자가 안 보인다. 행 단위(.rg-rowhover)만
+   덮어써서는 안 잡힌다 — 실제로 먹는 것은 셀 단위 td:hover 다.
+
+   background 는 styleCallback 이 건드리지 않는 정적 속성이라
+   !important 를 써도 위쪽 경고에 해당하지 않는다. */
+.rg-body .rg-table tr td:hover,
+.rg-fixed-body .rg-table tr td:hover {
+  background: var(--line) !important;
+}
+
+/* 스크롤바 트랙 */
+.rg-scrolltrack {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+}
+
+/* ============================================================
+   삭제행 취소선 (Design §5.4 / FR-05)
+
+   F4 실측: softDeleting=true 로 지운 행은 **화면에서 숨지 않는다.**
+   그래서 "지워질 예정"이라는 표시를 우리가 그려야 한다.
+
+   ⚠️ !important 금지 구역 — color 를 건드리지 않는다.
+      상태 배지 색은 styleCallback 이 인라인 style 로 넣는데,
+      여기서 color 에 !important 를 붙이면 그게 통째로 죽는다.
+      (game-2048 S4 에서 3개 모듈 동안 못 잡았던 버그와 동형)
+      text-decoration 과 opacity 만 쓴다.
+
+   셀렉터가 3벌인 이유: RowStyleCallback 이 반환한 클래스명을
+   RealGrid2 가 tr 에 붙이는지 td 에 붙이는지 미검증이라 양쪽을 다 덮는다.
+   ============================================================ */
+tr.cc-row-deleted td,
+td.cc-row-deleted,
+.cc-row-deleted {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
