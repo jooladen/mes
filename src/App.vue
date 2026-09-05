@@ -19,6 +19,8 @@ import OrderPage from '@/practice/OrderPage.vue'
 import Step0AllInOne from '@/practice/split/Step0AllInOne.vue'
 import Step1DataSplit from '@/practice/split/step1/Step1DataSplit.vue'
 import Step2LogicSplit from '@/practice/split/step2/Step2LogicSplit.vue'
+import Step3ComponentSplit from '@/practice/split/step3/Step3ComponentSplit.vue'
+import Step4ApiSplit from '@/practice/split/step4/Step4ApiSplit.vue'
 
 const GROUPS = [
   {
@@ -37,7 +39,14 @@ const GROUPS = [
       { name: 'order', label: '거래명세서', icon: 'receipt_long', component: OrderPage },
       { name: 'split0', label: 'Step0 한덩어리', icon: 'inventory_2', component: Step0AllInOne },
       { name: 'split1', label: 'Step1 데이터분리', icon: 'inventory_2', component: Step1DataSplit },
-      { name: 'split2', label: 'Step2 계산분리', icon: 'inventory_2', component: Step2LogicSplit }
+      { name: 'split2', label: 'Step2 계산분리', icon: 'inventory_2', component: Step2LogicSplit },
+      {
+        name: 'split3',
+        label: 'Step3 화면조각분리',
+        icon: 'inventory_2',
+        component: Step3ComponentSplit
+      },
+      { name: 'split4', label: 'Step4 통신층분리', icon: 'cloud', component: Step4ApiSplit }
     ]
   }
 ]

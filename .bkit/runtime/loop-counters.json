@@ -13,8 +13,8 @@
       "ts": 1788631699839
     },
     "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\App.vue": {
-      "count": 7,
-      "ts": 1788638677771
+      "count": 11,
+      "ts": 1788642481205
     },
     "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step1\\orderSeed.js": {
       "count": 1,
@@ -57,8 +57,8 @@
       "ts": 1788637443811
     },
     "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\docs\\학습\\23-파일쪼개기-실습-5단계.md": {
-      "count": 2,
-      "ts": 1788637570487
+      "count": 6,
+      "ts": 1788642588235
     },
     "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\layouts\\MainLayout.vue": {
       "count": 1,
@@ -67,6 +67,26 @@
     "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\css\\coa-print.css": {
       "count": 1,
       "ts": 1788638704392
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step3\\OrderSheet.vue": {
+      "count": 1,
+      "ts": 1788640561001
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step3\\Step3ComponentSplit.vue": {
+      "count": 1,
+      "ts": 1788640579859
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step4\\http.js": {
+      "count": 1,
+      "ts": 1788642426263
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step4\\ordersApi.js": {
+      "count": 1,
+      "ts": 1788642439453
+    },
+    "C:\\Users\\jooladen\\Desktop\\claude-code2\\cdp2\\mes\\src\\practice\\split\\step4\\Step4ApiSplit.vue": {
+      "count": 1,
+      "ts": 1788642460982
     }
   }
 }
